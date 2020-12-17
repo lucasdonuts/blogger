@@ -16,19 +16,19 @@ ActiveRecord::Schema.define(version: 2020_12_16_162825) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
+    t.text "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
+    t.text "image_file_name"
+    t.text "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
   end
 
   create_table "attachments", force: :cascade do |t|
-    t.string "image_file_name"
-    t.string "image_content_type"
+    t.text "image_file_name"
+    t.text "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.integer "article_id", null: false
@@ -38,17 +38,17 @@ ActiveRecord::Schema.define(version: 2020_12_16_162825) do
   end
 
   create_table "authors", force: :cascade do |t|
-    t.string "username", null: false
-    t.string "email", null: false
-    t.string "crypted_password", null: false
-    t.string "salt", null: false
+    t.text "username", null: false
+    t.text "email", null: false
+    t.text "crypted_password", null: false
+    t.text "salt", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_authors_on_email", unique: true
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "author_name"
+    t.text "author_name"
     t.text "body"
     t.integer "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_162825) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
