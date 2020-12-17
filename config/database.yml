@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blogger2_development
+  database: blogger_development
   pool: 5
   username: lucas
   password:
@@ -47,7 +47,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: blogger2_test
+  database: blogger_test
   pool: 5
   username: lucas
   password:
